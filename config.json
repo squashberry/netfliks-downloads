@@ -10,7 +10,7 @@
   "latestVersion":"1.0.0",
   "minimumVersion":"1.0.0",
   "forceUpdate":false,
-  "downloadUrl":"https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe",
+  "downloadUrl":"https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe",
   "announcementEnabled":false,
   "announcement":""
 }
