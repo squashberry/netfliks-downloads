@@ -24,11 +24,16 @@
 <main>
 <section class="hero">
   <div class="hero-backdrop" aria-hidden="true">
-    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTSBIFw90-6pYOMxVtejMtDOfr4c_nsSRuU5BzWrnFzgPtVlDxoyI84bF4POfNcmJuZv4xjbp3fLL9rWPQjJyyPGIh1GP7gvgZIScYtIbdlIyvB8Dvx37KART3aLOd1i2LHNNvP0I-1CUQLuwWt1_y59.jpg?r=4e6" alt="">
+    <img id="heroMovieImage" src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTSBIFw90-6pYOMxVtejMtDOfr4c_nsSRuU5BzWrnFzgPtVlDxoyI84bF4POfNcmJuZv4xjbp3fLL9rWPQjJyyPGIh1GP7gvgZIScYtIbdlIyvB8Dvx37KART3aLOd1i2LHNNvP0I-1CUQLuwWt1_y59.jpg?r=4e6" alt="">
   </div>
   <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
   <div class="hero-copy reveal">
     <div class="pill"><span class="live-dot"></span> THE NEW STREAMING EXPERIENCE</div>
+    <div class="hero-movie-meta" id="heroMovieMeta">
+      <span class="hero-movie-category" id="heroMovieCategory">KOREAN ACTION</span>
+      <strong id="heroMovieTitle">Train to Busan</strong>
+      <span id="heroMovieStatus">NOW PLAYING</span>
+    </div>
     <h1>Streaming,<br><em>without friction.</em></h1>
     <p>One beautiful Netfliks app. Your streaming service. Your screen. Your way.</p>
     <div class="hero-actions">
@@ -46,7 +51,15 @@
       <div class="device-bar"><i></i><i></i><i></i><span>NETFLIKS</span></div>
       <div class="mock-content">
         <div class="mock-nav"><strong>NETFLIKS</strong><span>⌕</span></div>
-        <div class="mock-hero"><div><small>FEATURED</small><h2>Watch what<br>you love.</h2><button>WATCH NOW</button></div></div>
+        <div class="mock-hero" id="deviceMovie">
+          <div class="device-movie-image" id="deviceMovieImage"></div>
+          <div class="device-movie-shade"></div>
+          <div class="device-movie-copy">
+            <small id="deviceMovieCategory">KOREAN ACTION</small>
+            <h2 id="deviceMovieTitle">Train to Busan</h2>
+            <button>WATCH NOW</button>
+          </div>
+        </div>
         <div class="mock-row"><span></span><span></span><span></span><span></span></div>
       </div>
     </div>
@@ -60,33 +73,12 @@
 <section class="movie-showcase reveal" id="kdrama-showcase">
   <div class="showcase-head">
     <div>
-      <small>NOW PLAYING</small>
+      <small>100 MOVIES · 5 WORLDS</small>
       <h2>Stories worth<br><em>staying for.</em></h2>
     </div>
-    <span class="showcase-hint">Swipe to explore</span>
+    <span class="showcase-hint">100 titles · swipe to explore</span>
   </div>
-  <div class="movie-carousel" aria-label="Featured movie and series artwork">
-    <article class="movie-card">
-      <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTSBIFw90-6pYOMxVtejMtDOfr4c_nsSRuU5BzWrnFzgPtVlDxoyI84bF4POfNcmJuZv4xjbp3fLL9rWPQjJyyPGIh1GP7gvgZIScYtIbdlIyvB8Dvx37KART3aLOd1i2LHNNvP0I-1CUQLuwWt1_y59.jpg?r=4e6" alt="Alchemy of Souls still">
-      <div class="movie-card-overlay"></div>
-      <div class="movie-card-copy"><small>K-DRAMA · FANTASY</small><h3>Alchemy of Souls</h3><p>Magic, destiny and a world of changing souls.</p></div>
-    </article>
-    <article class="movie-card">
-      <img src="https://i.pinimg.com/736x/c7/7e/7d/c77e7d108628683fd5901295134bc3f3.jpg" alt="Mr. Queen still">
-      <div class="movie-card-overlay"></div>
-      <div class="movie-card-copy"><small>K-DRAMA · COMEDY</small><h3>Mr. Queen</h3><p>Royal chaos with a completely unexpected twist.</p></div>
-    </article>
-    <article class="movie-card">
-      <img src="https://ian.marieclaire.com.tw/assets/mc/202403/6600FB1DAFA651711340317.jpeg?format=jpg&t=sc&w=1200%2C675" alt="Queen of Tears still">
-      <div class="movie-card-overlay"></div>
-      <div class="movie-card-copy"><small>K-DRAMA · ROMANCE</small><h3>Queen of Tears</h3><p>Big feelings, beautiful frames and unforgettable moments.</p></div>
-    </article>
-    <article class="movie-card">
-      <img src="https://www.infobae.com/resizer/v2/VV56G5ODBBHALFCX3IMEZUS2U4.jpg?auth=a4a2b2cb1845a207d50dbf620bb07ae6ac1e256814ede9e56d58129a00ab1cae&height=512&quality=85&smart=true&width=1024" alt="My Demon still">
-      <div class="movie-card-overlay"></div>
-      <div class="movie-card-copy"><small>K-DRAMA · SUPERNATURAL</small><h3>My Demon</h3><p>A sleek supernatural romance for late-night watching.</p></div>
-    </article>
-  </div>
+  <div class="movie-carousel" id="movieCarousel" aria-label="100 featured movies and series"></div>v>
 </section>
 
 <section class="ticker"><div>NETFLIKS <span>✦</span> STREAM <span>✦</span> DISCOVER <span>✦</span> WATCH <span>✦</span> REPEAT <span>✦</span> NETFLIKS <span>✦</span> STREAM <span>✦</span></div></section>
