@@ -207,6 +207,80 @@ androidInstallGuideBackdrop?.addEventListener("click",()=>{
   closeModal(androidInstallGuide);
 });
 
+
+function setupTroubleToggle(toggleId, helpId){
+  const toggle=document.getElementById(toggleId);
+  const help=document.getElementById(helpId);
+
+  if(!toggle||!help)return;
+
+  toggle.addEventListener("click",()=>{
+    const opening=help.hidden;
+
+    help.hidden=!opening;
+    toggle.setAttribute("aria-expanded",String(opening));
+
+    const label=toggle.querySelector("span");
+    if(label){
+      label.textContent=opening?"Hide solutions":"Show solutions";
+    }
+  });
+}
+
+setupTroubleToggle("windowsTroubleToggle","windowsInstallHelp");
+setupTroubleToggle("androidTroubleToggle","androidInstallHelp");
+
+const movieCarousel=document.querySelector(".movie-carousel");
+
+if(movieCarousel){
+  let carouselTimer;
+
+  const startCarousel=()=>{
+    clearInterval(carouselTimer);
+
+    carouselTimer=setInterval(()=>{
+      if(
+        document.visibilityState!=="visible" ||
+        movieCarousel.matches(":hover")
+      )return;
+
+      const next=
+        movieCarousel.scrollLeft +
+        Math.min(
+          movieCarousel.clientWidth*.72,
+          420
+        );
+
+      if(
+        next >=
+        movieCarousel.scrollWidth-
+        movieCarousel.clientWidth-
+        12
+      ){
+        movieCarousel.scrollTo({
+          left:0,
+          behavior:"smooth"
+        });
+      }else{
+        movieCarousel.scrollTo({
+          left:next,
+          behavior:"smooth"
+        });
+      }
+    },4200);
+  };
+
+  movieCarousel.addEventListener("mouseenter",()=>{
+    clearInterval(carouselTimer);
+  });
+
+  movieCarousel.addEventListener("mouseleave",()=>{
+    startCarousel();
+  });
+
+  startCarousel();
+}
+
 document.addEventListener("keydown",e=>{
   if(e.key!=="Escape")return;
 
