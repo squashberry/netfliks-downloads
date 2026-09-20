@@ -1,46 +1,89 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09090b">
-  <title>Netfliks — Windows</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050507">
+<title>Netfliks — Stream without friction</title>
+<meta name="description" content="Download Netfliks and access your streaming experience from one beautiful app.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="shell">
-    <nav class="nav">
-      <div class="brand"><span class="brand-mark">N</span><span>Netfliks</span></div>
-      <a class="github" href="https://github.com/squashberry/netfliks-downloads" target="_blank" rel="noopener">GitHub</a>
-    </nav>
+<div class="noise"></div>
+<div class="cursor-glow"></div>
 
-    <section class="hero">
-      <div class="eyebrow">WINDOWS APP</div>
-      <h1>Your streaming.<br><span>One app.</span></h1>
-      <p class="lead">Download Netfliks for Windows and get a fast, focused way to access your streaming service.</p>
+<header class="topbar">
+  <a class="logo" href="#"><span class="logo-box">N</span><span>NETFLIKS</span></a>
+  <nav>
+    <a href="#experience">Experience</a>
+    <a href="#downloads">Downloads</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
 
-      <div class="actions">
-        <a id="downloadButton" class="button primary" href="https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe">
-          Download Netfliks
-        </a>
-        <a class="button secondary" href="#status">Check status</a>
+<main>
+<section class="hero">
+  <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+  <div class="hero-copy reveal">
+    <div class="pill"><span class="live-dot"></span> THE NEW STREAMING EXPERIENCE</div>
+    <h1>Streaming,<br><em>without friction.</em></h1>
+    <p>One beautiful Netfliks app. Your streaming service. Your screen. Your way.</p>
+    <div class="hero-actions">
+      <a id="heroDownload" class="cta" href="https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe">
+        <span>Download Netfliks</span><b>↓</b>
+      </a>
+      <a class="ghost" href="#experience">Explore <span>↘</span></a>
+    </div>
+    <div class="micro">Free to download · More platforms coming</div>
+  </div>
+
+  <div class="device-scene reveal" id="deviceScene">
+    <div class="halo"></div>
+    <div class="device">
+      <div class="device-bar"><i></i><i></i><i></i><span>NETFLIKS</span></div>
+      <div class="mock-content">
+        <div class="mock-nav"><strong>NETFLIKS</strong><span>⌕</span></div>
+        <div class="mock-hero"><div><small>FEATURED</small><h2>Watch what<br>you love.</h2><button>WATCH NOW</button></div></div>
+        <div class="mock-row"><span></span><span></span><span></span><span></span></div>
       </div>
+    </div>
+    <div class="float-card fc1"><b>4K</b><span>Ultra HD</span></div>
+    <div class="float-card fc2"><b>∞</b><span>Your library</span></div>
+    <div class="float-card fc3"><b>●</b><span>Live & ready</span></div>
+  </div>
+</section>
 
-      <div id="status" class="status-card">
-        <div class="status-row"><span>Latest version</span><strong id="version">Loading…</strong></div>
-        <div class="status-row"><span>Access</span><strong id="access">Loading…</strong></div>
-        <div id="announcement" class="announcement hidden"></div>
-      </div>
-    </section>
+<section class="ticker"><div>NETFLIKS <span>✦</span> STREAM <span>✦</span> DISCOVER <span>✦</span> WATCH <span>✦</span> REPEAT <span>✦</span> NETFLIKS <span>✦</span> STREAM <span>✦</span></div></section>
 
-    <section class="features">
-      <article><b>Remote control</b><span>App settings can be changed remotely without rebuilding the Windows app.</span></article>
-      <article><b>Payments</b><span>Payment access can be enabled or disabled remotely.</span></article>
-      <article><b>Updates</b><span>Minimum versions and forced updates can be controlled centrally.</span></article>
-    </section>
+<section id="experience" class="experience">
+  <div class="section-head reveal"><small>THE EXPERIENCE</small><h2>Built to feel<br><em>ridiculously good.</em></h2></div>
+  <div class="feature-grid">
+    <article class="feature reveal"><span class="feature-no">01</span><div class="icon">✦</div><h3>One beautiful home</h3><p>No clutter. No unnecessary detours. Open Netfliks and get straight to your entertainment.</p></article>
+    <article class="feature reveal"><span class="feature-no">02</span><div class="icon">◉</div><h3>Remote intelligence</h3><p>The app can receive configuration, access and update changes without rebuilding the application.</p></article>
+    <article class="feature reveal"><span class="feature-no">03</span><div class="icon">↗</div><h3>Always evolving</h3><p>Windows today. Additional platforms can be introduced later without changing the identity of the service.</p></article>
+  </div>
+</section>
 
-    <footer>© <span id="year"></span> Netfliks · Squashberry</footer>
-  </main>
-  <script src="app.js"></script>
+<section id="downloads" class="downloads reveal">
+  <div class="section-head"><small>GET THE APP</small><h2>Choose your<br><em>screen.</em></h2></div>
+  <div class="platforms">
+    <article class="platform active">
+      <div><span class="platform-icon">▣</span><small>AVAILABLE NOW</small><h3>Windows</h3><p>Download the Netfliks desktop application.</p></div>
+      <a id="windowsDownload" href="https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe">Direct download <b>↓</b></a>
+    </article>
+    <article class="platform future"><div><span class="platform-icon">◒</span><small>COMING LATER</small><h3>Android</h3><p>Mobile streaming, built for your pocket.</p></div><span class="coming">COMING SOON</span></article>
+    <article class="platform future"><div><span class="platform-icon">⌘</span><small>COMING LATER</small><h3>More platforms</h3><p>New devices can be enabled from the Netfliks control center.</p></div><span class="coming">PLANNED</span></article>
+  </div>
+</section>
+
+<section class="final-cta reveal">
+  <div class="final-glow"></div>
+  <small>READY?</small><h2>Your screen.<br><em>Your Netfliks.</em></h2>
+  <a class="cta" href="https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe">Download now <b>↓</b></a>
+</section>
+</main>
+
+<footer><span>NETFLIKS</span><span>© <span id="year"></span> Squashberry</span><a href="admin.html">Control Center</a></footer>
+<script src="app.js"></script>
 </body>
 </html>
