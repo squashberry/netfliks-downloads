@@ -413,10 +413,8 @@ function setHeroMovie(movie,index){
   if(deviceMovieTitle)deviceMovieTitle.textContent=movie.title;
   if(deviceMovieCategory)deviceMovieCategory.textContent=movie.category.toUpperCase();
 
-  if(movieCarousel){
-    const card=movieCarousel.querySelectorAll(".movie-card")[index];
-    card?.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
-  }
+  // Keep hero rotation independent from page scroll.
+  // The carousel remains available for manual horizontal exploration.
 }
 
 function randomMovieIndex(){
