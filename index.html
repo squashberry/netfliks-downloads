@@ -84,6 +84,55 @@
 </main>
 
 <footer><span>NETFLIKS</span><span>© <span id="year"></span> Squashberry</span></footer>
+<div id="installGuide" class="install-guide" aria-hidden="true">
+  <div class="install-guide-backdrop"></div>
+  <div class="install-guide-card" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle">
+    <button id="installGuideClose" class="install-guide-close" type="button" aria-label="Close">×</button>
+    <div class="install-guide-kicker">BEFORE YOU INSTALL</div>
+    <h2 id="installGuideTitle">Windows may show a security warning.</h2>
+    <p class="install-guide-intro">
+      Netfliks is a new Windows app and may not yet have an established Microsoft Defender SmartScreen reputation.
+      That warning does <strong>not by itself mean the app is malicious</strong>.
+    </p>
+
+    <div class="install-guide-steps">
+      <div class="install-step">
+        <span>01</span>
+        <div>
+          <h3>If Windows says “Windows protected your PC”</h3>
+          <p>Click <strong>More info</strong> in the warning window.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <span>02</span>
+        <div>
+          <h3>Review the publisher and file</h3>
+          <p>Make sure you downloaded Netfliks from this official website and that the file is <strong>NetfliksSetup.exe</strong>.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <span>03</span>
+        <div>
+          <h3>Continue</h3>
+          <p>After selecting <strong>More info</strong>, Windows may reveal the <strong>Run anyway</strong> option. Select it only when you trust the download source.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="install-guide-note">
+      <span>ⓘ</span>
+      <p>SmartScreen can warn about new or infrequently downloaded apps while reputation is being established. Keep Windows security enabled.</p>
+    </div>
+
+    <div class="install-guide-actions">
+      <button id="installGuideCancel" class="install-guide-secondary" type="button">Read installation guide</button>
+      <a id="installGuideContinue" class="cta install-guide-primary" href="https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe">
+        <span>Continue to install</span><b>↓</b>
+      </a>
+    </div>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>
