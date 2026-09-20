@@ -11,8 +11,66 @@ function setOutput(v,show=true){output.style.display=show?"block":"none";output.
 function unlock(){gate.hidden=true;app.hidden=false}
 function lock(){sessionStorage.removeItem(AUTH_KEY);app.hidden=true;gate.hidden=false;input.value="";setError("");setTimeout(()=>input.focus(),40)}
 function api(path,options={}){const headers=new Headers(options.headers||{});headers.set("Content-Type","application/json");const t=token();if(t)headers.set("Authorization",`Bearer ${t}`);return fetch(`${API_URL}${path}`,{...options,headers}).then(async r=>{const d=await r.json().catch(()=>({success:false,error:"Invalid server response."}));if(!r.ok||d.success===false){const e=new Error(d.error||`Request failed (${r.status})`);e.status=r.status;throw e}return d})}
-function configFromForm(){return{appName:"Netfliks",siteUrl:fields.siteUrl.value.trim(),paymentEnabled:fields.paymentEnabled.value==="true",price:Number(fields.price.value||0),currency:fields.currency.value.trim()||"GMD",paymentUrl:fields.paymentUrl.value.trim(),latestVersion:fields.latestVersion.value.trim(),minimumVersion:fields.minimumVersion.value.trim(),forceUpdate:fields.forceUpdate.value==="true",downloadUrl:"https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe",announcementEnabled:fields.announcementEnabled.value==="true",announcement:fields.announcement.value.trim(),announcementActionEnabled:fields.announcementActionEnabled.value==="true",announcementActionType:fields.announcementActionType.value,announcementButtonText:fields.announcementButtonText.value.trim(),announcementActionUrl:fields.announcementActionUrl.value.trim(),announcementActionText:fields.announcementActionText.value.trim(),announcementQuestion:fields.announcementQuestion.value.trim(),announcementYesText:fields.announcementYesText.value.trim(),announcementNoText:fields.announcementNoText.value.trim()}}
-function applyConfig(c){fields.siteUrl.value=c.siteUrl||"";fields.paymentEnabled.value=String(Boolean(c.paymentEnabled));fields.price.value=c.price??150;fields.currency.value=c.currency||"GMD";fields.paymentUrl.value=c.paymentUrl||"";fields.latestVersion.value=c.latestVersion||"1.0.0";fields.minimumVersion.value=c.minimumVersion||"1.0.0";fields.forceUpdate.value=String(Boolean(c.forceUpdate));fields.announcement.value=c.announcement||"";fields.announcementEnabled.value=String(Boolean(c.announcementEnabled));fields.announcementActionEnabled.value=String(Boolean(c.announcementActionEnabled));fields.announcementActionType.value=c.announcementActionType||"none";fields.announcementButtonText.value=c.announcementButtonText||"Take action";fields.announcementActionUrl.value=c.announcementActionUrl||"";fields.announcementActionText.value=c.announcementActionText||"";fields.announcementQuestion.value=c.announcementQuestion||"";fields.announcementYesText.value=c.announcementYesText||"YES";fields.announcementNoText.value=c.announcementNoText||"NO"}
+function configFromForm(){return{appName:"Netfliks",siteUrl:fields.siteUrl.value.trim(),paymentEnabled:fields.paymentEnabled.value==="true",price:Number(fields.price.value||0),currency:fields.currency.value.trim()||"GMD",paymentUrl:fields.paymentUrl.value.trim(),latestVersion:fields.latestVersion.value.trim(),minimumVersion:fields.minimumVersion.value.trim(),forceUpdate:fields.forceUpdate.value==="true",downloadUrl:"https://github.com/squashberry/netfliks-downloads/releases/latest/download/NetfliksSetup.exe",announcementEnabled:fields.announcementEnabled.value==="true",announcement:fields.announcement.value.trim(),announcementActionEnabled:fields.announcementActionEnabled.value==="true",announcementActionType:fields.announcementActionType.value,announcementButtonText:fields.announcementButtonText.value.trim(),announcementActionUrl:fields.announcementActionUrl.value.trim(),announcementActionText:fields.announcementActionText.value.trim(),announcementQuestion:fields.announcementQuestion.value.trim(),announcementYesText:fields.announcementYesText.value.trim(),announcementNoText:fields.announcementNoText.value.trim()}}
+function applyConfig(c){fields.siteUrl.value=c.siteUrl||"";fields.paymentEnabled.value=String(Boolean(c.paymentEnabled));fields.price.value=c.price??150;fields.currency.value=c.currency||"GMD";fields.paymentUrl.value=c.paymentUrl||"";fields.latestVersion.value=c.latestVersion||"1.0.0";fields.minimumVersion.value=c.minimumVersion||"1.0.0";fields.forceUpdate.value=String(Boolean(c.forceUpdate));fields.announcement.value=c.announcement||"";fields.announcementEnabled.value=String(Boolean(c.announcementEnabled));fields.announcementActionEnabled.value=String(Boolean(c.announcementActionEnabled));fields.announcementActionType.value=c.announcementActionType||"none";fields.announcementButtonText.value=c.announcementButtonText||"Take action";fields.announcementActionUrl.value=c.announcementActionUrl||"";fields.announcementActionText.value=c.announcementActionText||"";fields.announcementQuestion.value=c.announcementQuestion||"";fields.announcementYesText.value=c.announcementYesText||"YES";fields.announcementNoText.value=c.announcementNoText||"NO";updateAnnouncementActionFields()}
+function updateAnnouncementActionFields(){
+  const enabled = fields.announcementActionEnabled.value === "true";
+  const type = fields.announcementActionType.value;
+
+  const ids = [
+    "actionButtonTextField",
+    "actionLinkField",
+    "actionTextField",
+    "actionQuestionField",
+    "actionNoneHint"
+  ];
+
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.hidden = true;
+  });
+
+  if (!enabled || type === "none") {
+    const hint = document.getElementById("actionNoneHint");
+    if (hint) hint.hidden = false;
+    return;
+  }
+
+  if (type === "share") {
+    document.getElementById("actionButtonTextField").hidden = false;
+    document.getElementById("actionLinkField").hidden = false;
+    document.getElementById("actionTextField").hidden = false;
+    return;
+  }
+
+  if (type === "open_link") {
+    document.getElementById("actionButtonTextField").hidden = false;
+    document.getElementById("actionLinkField").hidden = false;
+    return;
+  }
+
+  if (type === "copy_text") {
+    document.getElementById("actionButtonTextField").hidden = false;
+    document.getElementById("actionTextField").hidden = false;
+    return;
+  }
+
+  if (type === "copy_link") {
+    document.getElementById("actionButtonTextField").hidden = false;
+    document.getElementById("actionLinkField").hidden = false;
+    return;
+  }
+
+  if (type === "download") {
+    document.getElementById("actionButtonTextField").hidden = false;
+    return;
+  }
+
+  if (type === "yes_no") {
+    document.getElementById("actionQuestionField").hidden = false;
+  }
+}
+
 function setApiStatus(online){const el=document.getElementById("apiStatus");el.textContent=online?"API online":"API unavailable";el.previousElementSibling?.classList.toggle("offline",!online)}
 
 async function loadConfig(){try{const d=await api("/admin/config");applyConfig(d.config);setApiStatus(true)}catch(e){setApiStatus(false);if(e.status===401){lock();setError("Your session expired.");}}}
@@ -34,3 +92,6 @@ previewButton.addEventListener("click",()=>setOutput(JSON.stringify(configFromFo
 document.getElementById("refreshStats").addEventListener("click",loadStats);
 
 if(token()){unlock();Promise.all([loadConfig(),loadStats()])}else lock();
+document.getElementById("announcementActionEnabled").addEventListener("change", updateAnnouncementActionFields);
+document.getElementById("announcementActionType").addEventListener("change", updateAnnouncementActionFields);
+updateAnnouncementActionFields();
