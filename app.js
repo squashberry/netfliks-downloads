@@ -1,5 +1,5 @@
 const CONFIG_URL="./config.json";
-const directFallback="https://github.com/squashberry/netfliks-downloads/releases/latest/download/NetfliksSetup.exe";
+const directFallback="https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe";
 
 document.querySelector("#year").textContent=new Date().getFullYear();
 
