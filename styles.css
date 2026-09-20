@@ -218,3 +218,205 @@ body.install-guide-open{overflow:hidden}
   .hero-movie-meta strong{max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .movie-card{flex-basis:84vw}
 }
+
+
+/* ============================================================
+   LOWER-PAGE CINEMATIC SECTIONS
+   ============================================================ */
+.worlds{
+  padding:130px 8vw 80px;
+  position:relative;
+  overflow:hidden;
+}
+.worlds:before{
+  content:"";
+  position:absolute;
+  width:650px;height:650px;
+  left:-300px;top:180px;border-radius:50%;
+  background:radial-gradient(circle,#6d54ff18,transparent 68%);
+  filter:blur(8px);
+  pointer-events:none;
+}
+.worlds-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:50px;
+  margin-bottom:35px;
+}
+.worlds-head small{
+  font-size:10px;letter-spacing:.2em;color:#666671;font-weight:900;
+}
+.worlds-head h2{
+  font-size:clamp(50px,7vw,92px);
+  line-height:.88;
+  letter-spacing:-.07em;
+  margin:16px 0 0;
+}
+.worlds-head h2 em{
+  font-family:Georgia,serif;font-weight:400;color:#777;font-style:italic;
+}
+.worlds-head>p{
+  max-width:290px;
+  color:#686870;font-size:13px;line-height:1.7;
+  margin:0 0 6px;
+}
+.world-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:250px;
+  gap:12px;
+}
+.world-card{
+  position:relative;
+  overflow:hidden;
+  min-height:250px;
+  border:1px solid #24242b;
+  border-radius:26px;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  isolation:isolate;
+  transition:transform .5s ease,border-color .5s ease;
+  background:#101014;
+}
+.world-card:hover{transform:translateY(-8px);border-color:#55555e}
+.world-card:before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(circle at 78% 18%,#ffffff22,transparent 25%),
+    linear-gradient(135deg,#242438,#09090d 70%);
+}
+.world-card:after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,transparent 10%,#050507d9 100%);
+}
+.world-card>span{
+  font-size:10px;color:#888894;font-weight:900;letter-spacing:.14em;
+}
+.world-card>div{position:relative;z-index:2}
+.world-card small{font-size:9px;letter-spacing:.16em;color:#bbbcc5;font-weight:900}
+.world-card h3{
+  margin:9px 0 16px;
+  font-size:34px;line-height:.9;letter-spacing:-.06em;
+}
+.world-card b{
+  font-size:10px;letter-spacing:.12em;color:#ddd;
+}
+.world-korea{grid-column:span 2;background:linear-gradient(145deg,#2c1726,#0a0a0d 74%)}
+.world-korea:before{background:radial-gradient(circle at 75% 18%,#ff8fa438,transparent 28%),linear-gradient(135deg,#4d1f37,#09090d 70%)}
+.world-america{grid-column:span 2;background:linear-gradient(145deg,#17264c,#0a0a0d 74%)}
+.world-america:before{background:radial-gradient(circle at 72% 15%,#6da3ff32,transparent 28%),linear-gradient(135deg,#1d315e,#09090d 70%)}
+.world-uk{grid-column:span 2;background:linear-gradient(145deg,#24242e,#09090d 74%)}
+.world-uk:before{background:radial-gradient(circle at 70% 18%,#ffffff20,transparent 28%),linear-gradient(135deg,#34343c,#09090d 70%)}
+.world-india{grid-column:span 3;background:linear-gradient(145deg,#4c2412,#0c0a0a 74%)}
+.world-india:before{background:radial-gradient(circle at 75% 16%,#ff9d5545,transparent 28%),linear-gradient(135deg,#713719,#0b0a0b 70%)}
+.world-global{grid-column:span 3;background:linear-gradient(145deg,#103d36,#080c0c 74%)}
+.world-global:before{background:radial-gradient(circle at 72% 16%,#67f0cc31,transparent 28%),linear-gradient(135deg,#14514a,#080c0c 70%)}
+
+.cinema-banner{
+  margin:40px 8vw 50px;
+  min-height:450px;
+  border:1px solid #25252c;
+  border-radius:34px;
+  background:
+    radial-gradient(circle at 78% 40%,#ffffff0c,transparent 24%),
+    radial-gradient(circle at 22% 80%,#6d54ff12,transparent 28%),
+    linear-gradient(120deg,#111116,#08080b);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  padding:70px;
+  position:relative;
+  overflow:hidden;
+}
+.cinema-copy{max-width:600px;position:relative;z-index:2}
+.cinema-copy small{font-size:10px;letter-spacing:.2em;color:#6f6f78;font-weight:900}
+.cinema-copy h2{
+  font-size:clamp(55px,7vw,94px);
+  line-height:.86;letter-spacing:-.07em;margin:17px 0 24px;
+}
+.cinema-copy h2 em{
+  font-family:Georgia,serif;font-weight:400;color:#777;font-style:italic;
+}
+.cinema-copy p{color:#73737c;line-height:1.75;font-size:14px;max-width:450px}
+.cinema-orbit{
+  width:300px;height:300px;position:relative;display:grid;place-items:center;flex:none;
+}
+.orbit-ring{
+  position:absolute;border:1px solid #ffffff18;border-radius:50%;
+  animation:orbitSpin 12s linear infinite;
+}
+.ring-one{width:280px;height:160px;transform:rotate(28deg)}
+.ring-two{width:180px;height:280px;transform:rotate(-28deg);animation-direction:reverse}
+.orbit-core{
+  width:120px;height:120px;border-radius:34px;
+  background:linear-gradient(145deg,#fff,#bdbdc5);
+  color:#08080b;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 25px 80px #fff2,0 0 0 1px #fff;
+}
+.orbit-core strong{font-size:54px;line-height:1;font-weight:950}
+.orbit-core span{font-size:8px;font-weight:950;letter-spacing:.18em;margin-top:8px}
+
+.downloads{
+  position:relative;
+}
+.downloads-top{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:30px;
+}
+.downloads-top .section-head h2{margin-bottom:65px}
+.download-promise{
+  display:flex;align-items:center;gap:15px;
+  margin-bottom:72px;padding:14px 18px;
+  border:1px solid #24242b;border-radius:16px;background:#0d0d11;
+}
+.download-promise>span{font-size:9px;color:#777;font-weight:900}
+.download-promise strong{font-size:13px}
+.download-promise p{margin:3px 0 0;color:#676770;font-size:11px}
+
+.feature-tall{min-height:370px}
+.feature-accent{
+  background:
+    radial-gradient(circle at 75% 20%,#ffffff12,transparent 26%),
+    linear-gradient(145deg,#17171d,#0a0a0d);
+}
+.feature-line{
+  width:100%;height:1px;background:#25252c;margin-top:40px;
+}
+.feature>strong{
+  display:block;margin-top:12px;font-size:9px;letter-spacing:.14em;color:#686870;
+}
+.mini-stat{
+  margin-top:38px;display:flex;align-items:flex-end;gap:12px
+}
+.mini-stat b{font-size:66px;line-height:.7;letter-spacing:-.07em}
+.mini-stat span{font-size:9px;letter-spacing:.14em;color:#6a6a72;font-weight:900;padding-bottom:4px}
+
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+
+@media(max-width:900px){
+  .worlds{padding:100px 6vw 70px}
+  .worlds-head{flex-direction:column;align-items:flex-start}
+  .world-grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px}
+  .world-korea,.world-america,.world-uk,.world-india,.world-global{grid-column:span 1}
+  .world-india,.world-global{grid-column:span 2}
+  .cinema-banner{margin-inline:6vw;padding:50px;min-height:380px}
+}
+@media(max-width:600px){
+  .worlds{padding-inline:6vw}
+  .world-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+  .world-card,.world-korea,.world-america,.world-uk,.world-india,.world-global{grid-column:span 1;min-height:220px}
+  .cinema-banner{margin-inline:6vw;padding:34px 24px;min-height:560px;flex-direction:column;align-items:flex-start;gap:20px}
+  .cinema-orbit{width:230px;height:230px;align-self:center}
+  .ring-one{width:220px;height:130px}
+  .ring-two{width:145px;height:220px}
+  .orbit-core{width:100px;height:100px}
+  .orbit-core strong{font-size:44px}
+  .downloads-top{display:block}
+  .download-promise{margin:-25px 0 45px}
+}
