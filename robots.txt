@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Sitemap: https://squashberry.github.io/netfliks-downloads/sitemap.xml
