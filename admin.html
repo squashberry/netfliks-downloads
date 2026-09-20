@@ -2,83 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Netfliks Control Center</title>
-<link rel="stylesheet" href="admin.css">
+<title>Netfliks Control Center</title><link rel="stylesheet" href="admin.css">
 </head>
 <body>
 <div class="admin-shell">
-  <div id="loginGate" class="login-gate">
-    <div class="login-card">
-      <div class="login-mark">N</div>
-      <div class="login-kicker">NETFLIKS ADMIN</div>
-      <h1>Control Center</h1>
-      <p>Enter the administrator passcode to continue.</p>
-      <form id="loginForm" autocomplete="off">
-        <label for="passcode">Passcode</label>
-        <div class="pass-wrap">
-          <input id="passcode" type="password" inputmode="text" autocomplete="current-password" placeholder="Enter passcode" autofocus>
-          <button type="button" id="togglePass" aria-label="Show passcode">Show</button>
-        </div>
-        <div id="loginError" class="login-error" aria-live="polite"></div>
-        <button class="login-button" type="submit">Unlock Control Center <span>↗</span></button>
-      </form>
-      <div class="login-foot">Private administrator area</div>
-    </div>
-  </div>
+<div id="loginGate" class="login-gate">
+<div class="login-card">
+<div class="login-mark">N</div><div class="login-kicker">NETFLIKS ADMIN</div>
+<h1>Control Center</h1><p>Enter the administrator passcode to continue.</p>
+<form id="loginForm" autocomplete="off">
+<label for="passcode">Passcode</label>
+<div class="pass-wrap"><input id="passcode" type="password" autocomplete="current-password" placeholder="Enter passcode" autofocus><button type="button" id="togglePass">Show</button></div>
+<div id="loginError" class="login-error" aria-live="polite"></div>
+<button class="login-button" type="submit">Unlock Control Center <span>↗</span></button>
+</form><div class="login-foot">Private administrator area</div>
+</div></div>
 
-  <div id="adminApp" class="admin-app" hidden>
-    <header>
-      <a href="index.html" class="back">← Netfliks</a>
-      <span class="badge">CONTROL CENTER</span>
-      <button id="lock" class="lock-button" type="button">Lock</button>
-    </header>
-
-    <section class="admin-hero">
-      <small>NETFLIKS ADMIN</small>
-      <h1>Control everything.<br><i>from one place.</i></h1>
-      <p>Configure access, payments, versions, announcements and supported platforms remotely.</p>
-    </section>
-
-    <div class="notice">
-      <b>Secure backend connection</b>
-      <span>The control interface is protected by an administrator gate. Remote saving still requires the secure backend connection; never place private payment credentials or API tokens in this public page.</span>
-    </div>
-
-    <section class="panel-grid">
-      <article class="panel">
-        <div class="panel-top"><span>01</span><b>App access</b></div>
-        <label>Streaming website URL<input id="siteUrl" placeholder="https://your-streaming-site.com"></label>
-        <label>Payment access<select id="paymentEnabled"><option value="false">Disabled — Free</option><option value="true">Enabled — Paid</option></select></label>
-      </article>
-
-      <article class="panel">
-        <div class="panel-top"><span>02</span><b>Payments</b></div>
-        <label>Price<input id="price" type="number" placeholder="150"></label>
-        <label>Currency<input id="currency" value="GMD"></label>
-        <label>SquashberryPay URL<input id="paymentUrl" placeholder="https://..."></label>
-      </article>
-
-      <article class="panel">
-        <div class="panel-top"><span>03</span><b>Updates</b></div>
-        <label>Latest version<input id="latestVersion" value="1.0.0"></label>
-        <label>Minimum version<input id="minimumVersion" value="1.0.0"></label>
-        <label>Force update<select id="forceUpdate"><option value="false">Off</option><option value="true">On</option></select></label>
-      </article>
-
-      <article class="panel">
-        <div class="panel-top"><span>04</span><b>Announcement</b></div>
-        <label>Message<textarea id="announcement" placeholder="Write an announcement…"></textarea></label>
-        <label>Show announcement<select id="announcementEnabled"><option value="false">Hidden</option><option value="true">Visible</option></select></label>
-      </article>
-    </section>
-
-    <div class="admin-actions">
-      <button id="save" disabled>Save changes</button>
-      <button id="preview">Preview config</button>
-    </div>
-    <pre id="output"></pre>
-  </div>
-</div>
+<div id="adminApp" class="admin-app" hidden>
+<header><a href="index.html" class="back">← Netfliks</a><span class="badge">CONTROL CENTER</span><button id="lock" class="lock-button" type="button">Lock</button></header>
+<section class="admin-hero"><small>NETFLIKS ADMIN</small><h1>Control everything.<br><i>from one place.</i></h1><p>Configure access, payments, versions, announcements and supported platforms remotely.</p></section>
+<div class="notice"><b>Protected control interface</b><span>Administrator access is gated before the control interface is shown. Private payment credentials and API tokens must stay on the secure backend.</span></div>
+<section class="panel-grid">
+<article class="panel"><div class="panel-top"><span>01</span><b>App access</b></div><label>Streaming website URL<input id="siteUrl" placeholder="https://your-streaming-site.com"></label><label>Payment access<select id="paymentEnabled"><option value="false">Disabled — Free</option><option value="true">Enabled — Paid</option></select></label></article>
+<article class="panel"><div class="panel-top"><span>02</span><b>Payments</b></div><label>Price<input id="price" type="number" placeholder="150"></label><label>Currency<input id="currency" value="GMD"></label><label>SquashberryPay URL<input id="paymentUrl" placeholder="https://..."></label></article>
+<article class="panel"><div class="panel-top"><span>03</span><b>Updates</b></div><label>Latest version<input id="latestVersion" value="1.0.0"></label><label>Minimum version<input id="minimumVersion" value="1.0.0"></label><label>Force update<select id="forceUpdate"><option value="false">Off</option><option value="true">On</option></select></label></article>
+<article class="panel"><div class="panel-top"><span>04</span><b>Announcement</b></div><label>Message<textarea id="announcement" placeholder="Write an announcement…"></textarea></label><label>Show announcement<select id="announcementEnabled"><option value="false">Hidden</option><option value="true">Visible</option></select></label></article>
+</section>
+<div class="admin-actions"><button id="save" disabled>Save changes</button><button id="preview">Preview config</button></div><pre id="output"></pre>
+</div></div>
 <script src="admin.js"></script>
-</body>
-</html>
+</body></html>
