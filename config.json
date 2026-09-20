@@ -1,0 +1,16 @@
+{
+  "appName": "Netfliks",
+  "siteUrl": "https://YOUR-STREAMING-WEBSITE.com",
+  "paymentEnabled": false,
+  "price": 150,
+  "currency": "GMD",
+  "paymentUrl": "",
+  "activationVerifyUrl": "",
+  "activationStatusUrl": "",
+  "latestVersion": "1.0.0",
+  "minimumVersion": "1.0.0",
+  "forceUpdate": false,
+  "downloadUrl": "https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe",
+  "announcementEnabled": false,
+  "announcement": ""
+}

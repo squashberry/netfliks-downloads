@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <title>Netfliks — Windows</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav">
+      <div class="brand"><span class="brand-mark">N</span><span>Netfliks</span></div>
+      <a class="github" href="https://github.com/squashberry/netfliks-downloads" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">WINDOWS APP</div>
+      <h1>Your streaming.<br><span>One app.</span></h1>
+      <p class="lead">Download Netfliks for Windows and get a fast, focused way to access your streaming service.</p>
+
+      <div class="actions">
+        <a id="downloadButton" class="button primary" href="https://github.com/squashberry/netfliks-downloads/releases/latest/download/Netfliks.exe">
+          Download Netfliks
+        </a>
+        <a class="button secondary" href="#status">Check status</a>
+      </div>
+
+      <div id="status" class="status-card">
+        <div class="status-row"><span>Latest version</span><strong id="version">Loading…</strong></div>
+        <div class="status-row"><span>Access</span><strong id="access">Loading…</strong></div>
+        <div id="announcement" class="announcement hidden"></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <article><b>Remote control</b><span>App settings can be changed remotely without rebuilding the Windows app.</span></article>
+      <article><b>Payments</b><span>Payment access can be enabled or disabled remotely.</span></article>
+      <article><b>Updates</b><span>Minimum versions and forced updates can be controlled centrally.</span></article>
+    </section>
+
+    <footer>© <span id="year"></span> Netfliks · Squashberry</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
