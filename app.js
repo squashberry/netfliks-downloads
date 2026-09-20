@@ -81,6 +81,12 @@ const installGuideClose=document.getElementById("installGuideClose");
 const installGuideCancel=document.getElementById("installGuideCancel");
 const installGuideBackdrop=installGuide?.querySelector(".install-guide-backdrop");
 
+const androidInstallGuide=document.getElementById("androidInstallGuide");
+const androidInstallGuideContinue=document.getElementById("androidInstallGuideContinue");
+const androidInstallGuideClose=document.getElementById("androidInstallGuideClose");
+const androidInstallGuideCancel=document.getElementById("androidInstallGuideCancel");
+const androidInstallGuideBackdrop=androidInstallGuide?.querySelector(".install-guide-backdrop");
+
 function openModal(modal){
   if(!modal)return;
   modal.hidden=false;
@@ -126,6 +132,18 @@ function openWindowsGuide(){
   },180);
 }
 
+function openAndroidGuide(){
+  if(androidInstallGuideContinue){
+    androidInstallGuideContinue.href=androidDownloadUrl;
+  }
+
+  closeModal(downloadChooser);
+  setTimeout(()=>{
+    openModal(androidInstallGuide);
+    androidInstallGuideClose?.focus();
+  },180);
+}
+
 document.querySelectorAll(".download-trigger").forEach(link=>{
   link.addEventListener("click",e=>{
     e.preventDefault();
@@ -135,8 +153,14 @@ document.querySelectorAll(".download-trigger").forEach(link=>{
 
 chooseWindows?.addEventListener("click",openWindowsGuide);
 
-chooseAndroid?.addEventListener("click",()=>{
-  chooseAndroid.href=androidDownloadUrl;
+chooseAndroid?.addEventListener("click",e=>{
+  e.preventDefault();
+  openAndroidGuide();
+});
+
+document.querySelector("#androidDownload")?.addEventListener("click",e=>{
+  e.preventDefault();
+  openAndroidGuide();
 });
 
 installGuideContinue?.addEventListener("click",()=>{
@@ -167,6 +191,22 @@ installGuideBackdrop?.addEventListener("click",()=>{
   closeModal(installGuide);
 });
 
+androidInstallGuideContinue?.addEventListener("click",()=>{
+  closeModal(androidInstallGuide);
+});
+
+androidInstallGuideClose?.addEventListener("click",()=>{
+  closeModal(androidInstallGuide);
+});
+
+androidInstallGuideCancel?.addEventListener("click",()=>{
+  closeModal(androidInstallGuide);
+});
+
+androidInstallGuideBackdrop?.addEventListener("click",()=>{
+  closeModal(androidInstallGuide);
+});
+
 document.addEventListener("keydown",e=>{
   if(e.key!=="Escape")return;
 
@@ -174,5 +214,7 @@ document.addEventListener("keydown",e=>{
     closeModal(downloadChooser);
   }else if(installGuide?.classList.contains("visible")){
     closeModal(installGuide);
+  }else if(androidInstallGuide?.classList.contains("visible")){
+    closeModal(androidInstallGuide);
   }
 });
