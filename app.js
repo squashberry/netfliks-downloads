@@ -34,3 +34,53 @@ async function loadConfig(){
   }
 }
 loadConfig();
+
+const installGuide=document.getElementById("installGuide");
+const installGuideContinue=document.getElementById("installGuideContinue");
+const installGuideClose=document.getElementById("installGuideClose");
+const installGuideCancel=document.getElementById("installGuideCancel");
+const installGuideBackdrop=installGuide?.querySelector(".install-guide-backdrop");
+
+let pendingDownloadUrl=installGuideContinue?.getAttribute("href")||directFallback;
+
+function openInstallGuide(url){
+  if(!installGuide||!installGuideContinue)return;
+  pendingDownloadUrl=url||pendingDownloadUrl||directFallback;
+  installGuideContinue.href=pendingDownloadUrl;
+  installGuide.hidden=false;
+  installGuide.setAttribute("aria-hidden","false");
+  document.body.classList.add("install-guide-open");
+  requestAnimationFrame(()=>installGuide.classList.add("visible"));
+  installGuideClose?.focus();
+}
+
+function closeInstallGuide(){
+  if(!installGuide)return;
+  installGuide.classList.remove("visible");
+  installGuide.setAttribute("aria-hidden","true");
+  document.body.classList.remove("install-guide-open");
+  setTimeout(()=>{if(installGuide)installGuide.hidden=true},240);
+}
+
+document.querySelectorAll("#heroDownload,#windowsDownload,.final-cta .cta").forEach(link=>{
+  link.addEventListener("click",e=>{
+    e.preventDefault();
+    openInstallGuide(link.href);
+  });
+});
+
+installGuideContinue?.addEventListener("click",e=>{
+  if(!pendingDownloadUrl)return;
+  installGuideContinue.href=pendingDownloadUrl;
+  closeInstallGuide();
+});
+
+installGuideClose?.addEventListener("click",closeInstallGuide);
+installGuideCancel?.addEventListener("click",closeInstallGuide);
+installGuideBackdrop?.addEventListener("click",closeInstallGuide);
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&installGuide?.classList.contains("visible"))closeInstallGuide();
+});
+
+installGuide?.setAttribute("hidden","");
