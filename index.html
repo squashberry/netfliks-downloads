@@ -194,6 +194,54 @@
     </div>
   </div>
 </div>
+<div id="androidInstallGuide" class="install-guide" aria-hidden="true" hidden>
+  <div class="install-guide-backdrop"></div>
+  <div class="install-guide-card" role="dialog" aria-modal="true" aria-labelledby="androidInstallGuideTitle">
+    <button id="androidInstallGuideClose" class="install-guide-close" type="button" aria-label="Close">×</button>
+    <div class="install-guide-kicker">BEFORE YOU INSTALL</div>
+    <h2 id="androidInstallGuideTitle">Android may show a Play Protect warning.</h2>
+    <p class="install-guide-intro">
+      Netfliks is being installed directly from the official Netfliks website rather than Google Play, so Google Play Protect may warn you about the APK.
+      Check that you downloaded it from this official website and that the file is <strong>Netfliks-Android.apk</strong>.
+    </p>
+
+    <div class="install-guide-steps">
+      <div class="install-step">
+        <span>01</span>
+        <div>
+          <h3>If Android shows “Blocked by Play Protect”</h3>
+          <p>Tap <strong>More details</strong> (or the small arrow) at the bottom of the warning. If Android offers <strong>Install anyway</strong>, use that option.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <span>02</span>
+        <div>
+          <h3>If “Install anyway” is not available</h3>
+          <p>On some devices, you may need to open <strong>Google Play Store → profile icon → Play Protect → Settings</strong> and temporarily turn off <strong>Scan apps with Play Protect</strong>.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <span>03</span>
+        <div>
+          <h3>Turn protection back on</h3>
+          <p>After Netfliks is installed, turn <strong>Scan apps with Play Protect</strong> back on. Google recommends keeping Play Protect enabled.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="install-guide-note">
+      <span>ⓘ</span>
+      <p>Android can check apps installed outside Google Play for potentially harmful behavior. Only continue when you trust the download source and have verified that you downloaded the official Netfliks APK.</p>
+    </div>
+
+    <div class="install-guide-actions">
+      <button id="androidInstallGuideCancel" class="install-guide-secondary" type="button">Close guide</button>
+      <a id="androidInstallGuideContinue" class="cta install-guide-primary" href="#">
+        <span>Continue to APK</span><b>↓</b>
+      </a>
+    </div>
+  </div>
+</div>
 
 <script src="app.js"></script>
 </body>
