@@ -102,22 +102,66 @@
         <article class="panel"><div class="panel-top"><span>01</span><b>App access</b></div><label>Streaming website URL<input id="siteUrl" placeholder="https://your-streaming-site.com"></label><label>Payment access<select id="paymentEnabled"><option value="false">Disabled — Free</option><option value="true">Enabled — Paid</option></select></label></article>
         <article class="panel"><div class="panel-top"><span>02</span><b>Payments</b></div><label>Price<input id="price" type="number" placeholder="150"></label><label>Currency<input id="currency" value="GMD"></label><label>SquashberryPay URL<input id="paymentUrl" placeholder="https://..."></label></article>
         <article class="panel"><div class="panel-top"><span>03</span><b>Updates</b></div><label>Latest version<input id="latestVersion" value="1.0.0"></label><label>Minimum version<input id="minimumVersion" value="1.0.0"></label><label>Force update<select id="forceUpdate"><option value="false">Off</option><option value="true">On</option></select></label></article>
-        <article class="panel"><div class="panel-top"><span>04</span><b>Announcement</b></div><label>Message<textarea id="announcement" placeholder="Write an announcement…"></textarea></label><label>Show announcement<select id="announcementEnabled"><option value="false">Hidden</option><option value="true">Visible</option></select></label></article><article class="panel announcement-actions-panel"><div class="panel-top"><span>05</span><b>Announcement action</b></div>
-<label>Action enabled<select id="announcementActionEnabled"><option value="false">Disabled</option><option value="true">Enabled</option></select></label>
-<label>Action type<select id="announcementActionType">
-<option value="none">None</option>
-<option value="share">Share</option>
-<option value="open_link">Open link</option>
-<option value="copy_text">Copy text</option>
-<option value="copy_link">Copy link</option>
-<option value="download">Download Netfliks</option>
-<option value="yes_no">Yes / No</option>
-</select></label>
-<label>Button text<input id="announcementButtonText" value="Take action" placeholder="Share Netfliks"></label>
-<label>Action link<input id="announcementActionUrl" placeholder="https://..."></label>
-<label>Action text<input id="announcementActionText" placeholder="Your editable share/copy text. Use {link} for the action link."></label>
-<label>Yes / No question<input id="announcementQuestion" placeholder="Do you like Netfliks?"></label>
-<div class="two-fields"><label>Yes button<input id="announcementYesText" value="YES"></label><label>No button<input id="announcementNoText" value="NO"></label></div>
+        <article class="panel"><div class="panel-top"><span>04</span><b>Announcement</b></div><label>Message<textarea id="announcement" placeholder="Write an announcement…"></textarea></label><label>Show announcement<select id="announcementEnabled"><option value="false">Hidden</option><option value="true">Visible</option></select></label></article><article class="panel announcement-actions-panel">
+<div class="panel-top"><span>05</span><b>Announcement action</b></div>
+
+<label>Action enabled
+<select id="announcementActionEnabled">
+  <option value="false">Disabled</option>
+  <option value="true">Enabled</option>
+</select>
+</label>
+
+<label>Action type
+<select id="announcementActionType">
+  <option value="none">None</option>
+  <option value="share">Share</option>
+  <option value="open_link">Open link</option>
+  <option value="copy_text">Copy text</option>
+  <option value="copy_link">Copy link</option>
+  <option value="download">Download Netfliks</option>
+  <option value="yes_no">Yes / No</option>
+</select>
+</label>
+
+<div id="announcementActionFields">
+  <div id="actionButtonTextField">
+    <label>Button text
+      <input id="announcementButtonText" value="Take action" placeholder="Share Netfliks">
+    </label>
+  </div>
+
+  <div id="actionLinkField">
+    <label>Action link
+      <input id="announcementActionUrl" placeholder="https://...">
+    </label>
+  </div>
+
+  <div id="actionTextField">
+    <label>Action text
+      <textarea id="announcementActionText" placeholder="Write the text users will share or copy. Use {link} for the action link."></textarea>
+    </label>
+    <div class="field-hint">Use <code>{link}</code> anywhere in the text to insert the configured link automatically.</div>
+  </div>
+
+  <div id="actionQuestionField">
+    <label>Question
+      <input id="announcementQuestion" placeholder="Do you like Netfliks?">
+    </label>
+    <div class="two-fields">
+      <label>Yes button
+        <input id="announcementYesText" value="YES">
+      </label>
+      <label>No button
+        <input id="announcementNoText" value="NO">
+      </label>
+    </div>
+  </div>
+</div>
+
+<div id="actionNoneHint" class="action-empty">
+  Select an action type to configure its options.
+</div>
 </article>
       </section>
 
