@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050507">
 <title>Netfliks — Stream without friction</title>
-<meta name="description" content="Download Netfliks and access your streaming experience from one beautiful app.">
+<meta name="description" content="Download Netfliks for Windows and Android. iOS is coming soon.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,12 +29,12 @@
     <h1>Streaming,<br><em>without friction.</em></h1>
     <p>One beautiful Netfliks app. Your streaming service. Your screen. Your way.</p>
     <div class="hero-actions">
-      <a id="heroDownload" class="cta" href="https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe">
+      <a id="heroDownload" class="cta download-trigger" href="#">
         <span>Download Netfliks</span><b>↓</b>
       </a>
       <a class="ghost" href="#experience">Explore <span>↘</span></a>
     </div>
-    <div class="micro">Free to download · More platforms coming</div>
+    <div class="micro">Windows & Android available now · iOS coming soon</div>
   </div>
 
   <div class="device-scene reveal" id="deviceScene">
@@ -60,7 +60,7 @@
   <div class="feature-grid">
     <article class="feature reveal"><span class="feature-no">01</span><div class="icon">✦</div><h3>One beautiful home</h3><p>No clutter. No unnecessary detours. Open Netfliks and get straight to your entertainment.</p></article>
     <article class="feature reveal"><span class="feature-no">02</span><div class="icon">◉</div><h3>Remote intelligence</h3><p>The app can receive configuration, access and update changes without rebuilding the application.</p></article>
-    <article class="feature reveal"><span class="feature-no">03</span><div class="icon">↗</div><h3>Always evolving</h3><p>Windows today. Additional platforms can be introduced later without changing the identity of the service.</p></article>
+    <article class="feature reveal"><span class="feature-no">03</span><div class="icon">↗</div><h3>Always evolving</h3><p>Windows and Android are available now, with iOS planned for a future release.</p></article>
   </div>
 </section>
 
@@ -68,23 +68,85 @@
   <div class="section-head"><small>GET THE APP</small><h2>Choose your<br><em>screen.</em></h2></div>
   <div class="platforms">
     <article class="platform active">
-      <div><span class="platform-icon">▣</span><small>AVAILABLE NOW</small><h3>Windows</h3><p>Download the Netfliks desktop application.</p></div>
-      <a id="windowsDownload" href="https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe">Direct download <b>↓</b></a>
+      <div>
+        <span class="platform-icon platform-logo-wrap">
+          <img class="platform-logo" src="https://cdn.simpleicons.org/windows/ffffff" alt="Windows">
+        </span>
+        <small>AVAILABLE NOW</small>
+        <h3>Windows</h3>
+        <p>Download the Netfliks desktop application for Windows.</p>
+      </div>
+      <a id="windowsDownload" class="download-trigger" href="#">Choose download <b>↓</b></a>
     </article>
-    <article class="platform future"><div><span class="platform-icon">◒</span><small>COMING LATER</small><h3>Android</h3><p>Mobile streaming, built for your Andriod Devices.</p></div><span class="coming">COMING SOON</span></article>
-    <article class="platform future"><div><span class="platform-icon">⌘</span><small>COMING LATER</small><h3>Ios</h3><p>Mobile streaming, built for your Ios Devices.</p></div><span class="coming">COMING SOON</span></article>
+
+    <article class="platform active">
+      <div>
+        <span class="platform-icon platform-logo-wrap">
+          <img class="platform-logo" src="https://cdn.simpleicons.org/android/ffffff" alt="Android">
+        </span>
+        <small>AVAILABLE NOW</small>
+        <h3>Android</h3>
+        <p>Install the Netfliks mobile application on your Android device.</p>
+      </div>
+      <a id="androidDownload" class="android-direct" href="#">Download APK <b>↓</b></a>
+    </article>
+
+    <article class="platform future">
+      <div>
+        <span class="platform-icon platform-logo-wrap">
+          <img class="platform-logo" src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple / iOS">
+        </span>
+        <small>COMING SOON</small>
+        <h3>iOS</h3>
+        <p>Netfliks for iPhone and iPad is being prepared as a future release.</p>
+      </div>
+      <span class="coming">COMING SOON</span>
+    </article>
   </div>
 </section>
 
 <section class="final-cta reveal">
   <div class="final-glow"></div>
   <small>READY?</small><h2>Your screen.<br><em>Your Netfliks.</em></h2>
-  <a class="cta" href="https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe">Download now <b>↓</b></a>
+  <a class="cta download-trigger" href="#">Download now <b>↓</b></a>
 </section>
 </main>
 
 <footer><span>NETFLIKS</span><span>© <span id="year"></span> Squashberry</span></footer>
-<div id="installGuide" class="install-guide" aria-hidden="true">
+
+<div id="downloadChooser" class="download-chooser" aria-hidden="true" hidden>
+  <div class="download-chooser-backdrop"></div>
+  <div class="download-chooser-card" role="dialog" aria-modal="true" aria-labelledby="downloadChooserTitle">
+    <button id="downloadChooserClose" class="install-guide-close" type="button" aria-label="Close">×</button>
+    <div class="install-guide-kicker">CHOOSE YOUR PLATFORM</div>
+    <h2 id="downloadChooserTitle">Where are you installing Netfliks?</h2>
+    <p class="install-guide-intro">Pick the version for your device. Windows and Android are available now; iOS is coming soon.</p>
+
+    <div class="download-options">
+      <button id="chooseWindows" class="download-option" type="button">
+        <span class="platform-logo-wrap"><img class="platform-logo" src="https://cdn.simpleicons.org/windows/ffffff" alt=""></span>
+        <span class="download-option-copy"><strong>Windows</strong><small>Desktop installer · Available now</small></span>
+        <span class="download-option-arrow">→</span>
+      </button>
+
+      <a id="chooseAndroid" class="download-option" href="#">
+        <span class="platform-logo-wrap"><img class="platform-logo" src="https://cdn.simpleicons.org/android/ffffff" alt=""></span>
+        <span class="download-option-copy"><strong>Android</strong><small>APK · Available now</small></span>
+        <span class="download-option-arrow">↓</span>
+      </a>
+
+      <button class="download-option disabled" type="button" disabled>
+        <span class="platform-logo-wrap"><img class="platform-logo" src="https://cdn.simpleicons.org/apple/ffffff" alt=""></span>
+        <span class="download-option-copy"><strong>iOS</strong><small>iPhone & iPad · Coming soon</small></span>
+        <span class="download-option-status">SOON</span>
+      </button>
+    </div>
+
+    <button id="downloadChooserCancel" class="install-guide-secondary chooser-close-button" type="button">Close</button>
+  </div>
+</div>
+
+<div id="installGuide" class="install-guide" aria-hidden="true" hidden>
   <div class="install-guide-backdrop"></div>
   <div class="install-guide-card" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle">
     <button id="installGuideClose" class="install-guide-close" type="button" aria-label="Close">×</button>
@@ -126,7 +188,7 @@
 
     <div class="install-guide-actions">
       <button id="installGuideCancel" class="install-guide-secondary" type="button">Close guide</button>
-      <a id="installGuideContinue" class="cta install-guide-primary" href="https://github.com/squashberry/netfliks-downloads/releases/download/v1.0.0/NetfliksSetup.exe">
+      <a id="installGuideContinue" class="cta install-guide-primary" href="#">
         <span>Continue to install</span><b>↓</b>
       </a>
     </div>
