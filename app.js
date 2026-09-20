@@ -109,7 +109,8 @@ function closeModal(modal){
 
   if(
     (!downloadChooser||!downloadChooser.classList.contains("visible")) &&
-    (!installGuide||!installGuide.classList.contains("visible"))
+    (!installGuide||!installGuide.classList.contains("visible")) &&
+    (!androidInstallGuide||!androidInstallGuide.classList.contains("visible"))
   ){
     document.body.classList.remove("install-guide-open");
   }
@@ -121,6 +122,19 @@ function openDownloadChooser(){
 }
 
 function openWindowsGuide(){
+  const help=document.getElementById("windowsInstallHelp");
+  const toggle=document.getElementById("windowsTroubleToggle");
+
+  if(help){
+    help.hidden=true;
+  }
+
+  if(toggle){
+    toggle.setAttribute("aria-expanded","false");
+    const label=toggle.querySelector("span");
+    if(label)label.textContent="Show solutions";
+  }
+
   if(installGuideContinue){
     installGuideContinue.href=windowsDownloadUrl;
   }
@@ -133,6 +147,19 @@ function openWindowsGuide(){
 }
 
 function openAndroidGuide(){
+  const help=document.getElementById("androidInstallHelp");
+  const toggle=document.getElementById("androidTroubleToggle");
+
+  if(help){
+    help.hidden=true;
+  }
+
+  if(toggle){
+    toggle.setAttribute("aria-expanded","false");
+    const label=toggle.querySelector("span");
+    if(label)label.textContent="Show solutions";
+  }
+
   if(androidInstallGuideContinue){
     androidInstallGuideContinue.href=androidDownloadUrl;
   }
